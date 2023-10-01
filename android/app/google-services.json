@@ -1,0 +1,186 @@
+{
+  "project_info": {
+    "project_number": "451679835353",
+    "project_id": "little-shepherd-educare",
+    "storage_bucket": "little-shepherd-educare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451679835353:android:c1a3404cd5d27cf0cedac8",
+        "android_client_info": {
+          "package_name": "com.kinkong.littleshepherdseducare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451679835353-3jjp0hdufppubfmp5vps5tqfmnhff3le.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kinkong.littleshepherdseducare",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWo1meNE4rIcxXWHE7v8hz3hAPgnwbJ_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "451679835353-5d43kllgmbel7ljjhtufdpcgmj8jlin4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexeducare.dashboard"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451679835353:android:6add65e1d9b817b0cedac8",
+        "android_client_info": {
+          "package_name": "com.kinkong.thelittleshepherdseducare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451679835353-kpbj5s2m9bn18en4uqkmbo8rq25lj0mj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kinkong.thelittleshepherdseducare",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWo1meNE4rIcxXWHE7v8hz3hAPgnwbJ_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "451679835353-5d43kllgmbel7ljjhtufdpcgmj8jlin4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexeducare.dashboard"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451679835353:android:c4e7b4481e9a8fbdcedac8",
+        "android_client_info": {
+          "package_name": "com.mycompany.littleshepherdsattendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451679835353-n4bmlp45oadapntmnmub81525alqufcn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.littleshepherdsattendance",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWo1meNE4rIcxXWHE7v8hz3hAPgnwbJ_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "451679835353-5d43kllgmbel7ljjhtufdpcgmj8jlin4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexeducare.dashboard"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451679835353:android:5d24748291c69e6dcedac8",
+        "android_client_info": {
+          "package_name": "com.nexeducare.dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451679835353-757bsf2q58m84715c9g8er4f0f2gjbe3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nexeducare.dashboard",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWo1meNE4rIcxXWHE7v8hz3hAPgnwbJ_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "451679835353-5d43kllgmbel7ljjhtufdpcgmj8jlin4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexeducare.dashboard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
