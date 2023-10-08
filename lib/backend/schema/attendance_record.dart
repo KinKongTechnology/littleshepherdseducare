@@ -46,6 +46,21 @@ class AttendanceRecord extends FirestoreRecord {
   DocumentReference? get rate => _rate;
   bool hasRate() => _rate != null;
 
+  // "late" field.
+  int? _late;
+  int get late => _late ?? 0;
+  bool hasLate() => _late != null;
+
+  // "absent" field.
+  int? _absent;
+  int get absent => _absent ?? 0;
+  bool hasAbsent() => _absent != null;
+
+  // "present" field.
+  int? _present;
+  int get present => _present ?? 0;
+  bool hasPresent() => _present != null;
+
   void _initializeFields() {
     _attendanceTime = snapshotData['attendance_time'] as DateTime?;
     _absentTime = snapshotData['absent_time'] as DateTime?;
@@ -53,6 +68,9 @@ class AttendanceRecord extends FirestoreRecord {
     _studentName = snapshotData['student_name'] as DocumentReference?;
     _category = snapshotData['category'] as DocumentReference?;
     _rate = snapshotData['rate'] as DocumentReference?;
+    _late = castToType<int>(snapshotData['late']);
+    _absent = castToType<int>(snapshotData['absent']);
+    _present = castToType<int>(snapshotData['present']);
   }
 
   static CollectionReference get collection =>
@@ -96,6 +114,9 @@ Map<String, dynamic> createAttendanceRecordData({
   DocumentReference? studentName,
   DocumentReference? category,
   DocumentReference? rate,
+  int? late,
+  int? absent,
+  int? present,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -105,6 +126,9 @@ Map<String, dynamic> createAttendanceRecordData({
       'student_name': studentName,
       'category': category,
       'rate': rate,
+      'late': late,
+      'absent': absent,
+      'present': present,
     }.withoutNulls,
   );
 
@@ -121,7 +145,10 @@ class AttendanceRecordDocumentEquality implements Equality<AttendanceRecord> {
         e1?.classes == e2?.classes &&
         e1?.studentName == e2?.studentName &&
         e1?.category == e2?.category &&
-        e1?.rate == e2?.rate;
+        e1?.rate == e2?.rate &&
+        e1?.late == e2?.late &&
+        e1?.absent == e2?.absent &&
+        e1?.present == e2?.present;
   }
 
   @override
@@ -131,7 +158,10 @@ class AttendanceRecordDocumentEquality implements Equality<AttendanceRecord> {
         e?.classes,
         e?.studentName,
         e?.category,
-        e?.rate
+        e?.rate,
+        e?.late,
+        e?.absent,
+        e?.present
       ]);
 
   @override

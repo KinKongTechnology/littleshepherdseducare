@@ -4,12 +4,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart'
-    as smooth_page_indicator;
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'main_page_model.dart';
 export 'main_page_model.dart';
 
@@ -56,89 +56,145 @@ class _MainPageWidgetState extends State<MainPageWidget> {
           child: Stack(
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 20.0, 20.0, 20.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 200.0,
-                          child: Stack(
-                            children: [
-                              PageView(
-                                controller: _model.pageViewController ??=
-                                    PageController(initialPage: 0),
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    child: Image.asset(
-                                      'assets/images/321516607_852286765990562_3903420182537643727_n.jpg',
-                                      width: 300.0,
-                                      height: 200.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    child: Image.asset(
-                                      'assets/images/329789908_6383144678386909_187814371054165952_n.png',
-                                      width: 300.0,
-                                      height: 200.0,
-                                      fit: BoxFit.contain,
-                                    ),
-                                  ),
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    child: Image.asset(
-                                      'assets/images/334533608_1627327397726684_5204717270395876152_n.jpg',
-                                      width: double.infinity,
-                                      height: 0.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ],
+                            20.0, 0.0, 20.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'Welcome Back!',
+                                style: FlutterFlowTheme.of(context).bodyMedium,
                               ),
-                              Align(
-                                alignment: AlignmentDirectional(0.00, 1.00),
-                                child: Padding(
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  5.0, 0.0, 0.0, 0.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => Text(
+                                  currentUserDisplayName,
+                                  textAlign: TextAlign.start,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ),
+                            ),
+                            Stack(
+                              alignment: AlignmentDirectional(1.0, -1.0),
+                              children: [
+                                Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 16.0),
-                                  child:
-                                      smooth_page_indicator.SmoothPageIndicator(
-                                    controller: _model.pageViewController ??=
-                                        PageController(initialPage: 0),
-                                    count: 3,
-                                    axisDirection: Axis.horizontal,
-                                    onDotClicked: (i) async {
-                                      await _model.pageViewController!
-                                          .animateToPage(
-                                        i,
-                                        duration: Duration(milliseconds: 500),
-                                        curve: Curves.ease,
-                                      );
+                                      80.0, 0.0, 0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      GoRouter.of(context).prepareAuthEvent();
+                                      await authManager.signOut();
+                                      GoRouter.of(context)
+                                          .clearRedirectLocation();
+
+                                      context.goNamedAuth(
+                                          'TransitionPage', context.mounted);
                                     },
-                                    effect: smooth_page_indicator
-                                        .ExpandingDotsEffect(
-                                      expansionFactor: 3.0,
-                                      spacing: 8.0,
-                                      radius: 16.0,
-                                      dotWidth: 16.0,
-                                      dotHeight: 8.0,
-                                      dotColor: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      activeDotColor:
-                                          FlutterFlowTheme.of(context).success,
-                                      paintStyle: PaintingStyle.fill,
+                                    child: Icon(
+                                      Icons.power_settings_new_rounded,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      size: 24.0,
                                     ),
                                   ),
                                 ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      30.0, 3.0, 0.0, 0.0),
+                                  child: Container(
+                                    width: 10.0,
+                                    height: 10.0,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFEE3862),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      shape: BoxShape.rectangle,
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        width: 2.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 25.0, 0.0, 20.0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 160.0,
+                          child: CarouselSlider(
+                            items: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/334533608_1627327397726684_5204717270395876152_n.jpg',
+                                  width: 300.0,
+                                  height: 160.0,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/321516607_852286765990562_3903420182537643727_n.jpg',
+                                  width: 300.0,
+                                  height: 160.0,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: Image.asset(
+                                  'assets/images/329789908_6383144678386909_187814371054165952_n.png',
+                                  width: 300.0,
+                                  height: 160.0,
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             ],
+                            carouselController: _model.carouselController ??=
+                                CarouselController(),
+                            options: CarouselOptions(
+                              initialPage: 1,
+                              viewportFraction: 0.5,
+                              disableCenter: true,
+                              enlargeCenterPage: true,
+                              enlargeFactor: 0.25,
+                              enableInfiniteScroll: true,
+                              scrollDirection: Axis.horizontal,
+                              autoPlay: true,
+                              autoPlayAnimationDuration:
+                                  Duration(milliseconds: 800),
+                              autoPlayInterval: Duration(milliseconds: 4000),
+                              autoPlayCurve: Curves.linear,
+                              pauseAutoPlayInFiniteScroll: true,
+                              onPageChanged: (index, _) =>
+                                  _model.carouselCurrentIndex = index,
+                            ),
                           ),
                         ),
                       ),
@@ -202,6 +258,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType.fade,
+                                                    duration: Duration(
+                                                        milliseconds: 0),
                                                   ),
                                                 },
                                               );
@@ -295,7 +353,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'Yes please',
+                                              text: 'Coming Soon!',
                                               options: FFButtonOptions(
                                                 width: 130.0,
                                                 height: 50.0,
@@ -380,7 +438,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             onPressed: () {
                                               print('Button pressed ...');
                                             },
-                                            text: 'View details',
+                                            text: 'Coming Soon!',
                                             options: FFButtonOptions(
                                               width: 130.0,
                                               height: 50.0,
@@ -461,7 +519,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             onPressed: () {
                                               print('Button pressed ...');
                                             },
-                                            text: 'Yes please',
+                                            text: 'Coming Soon!',
                                             options: FFButtonOptions(
                                               width: 130.0,
                                               height: 50.0,
@@ -539,8 +597,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             )),
                                           ),
                                           FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              await launchURL(
+                                                  'https://wa.me/60189683001');
                                             },
                                             text: 'Start chat',
                                             options: FFButtonOptions(
@@ -629,10 +688,23 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             )),
                                           ),
                                           FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              await launchUrl(Uri(
+                                                  scheme: 'mailto',
+                                                  path:
+                                                      'admin@littleshepherdseducare.com',
+                                                  query: {
+                                                    'subject':
+                                                        'General Enquiry',
+                                                  }
+                                                      .entries
+                                                      .map((MapEntry<String,
+                                                                  String>
+                                                              e) =>
+                                                          '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                                      .join('&')));
                                             },
-                                            text: 'Get inspired',
+                                            text: 'Contact us',
                                             options: FFButtonOptions(
                                               width: 130.0,
                                               height: 50.0,
@@ -703,79 +775,6 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                       child: BottomNavBarWidget(),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 20.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Welcome Back!',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                      child: AuthUserStreamWidget(
-                        builder: (context) => Text(
-                          currentUserDisplayName,
-                          textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
-                        ),
-                      ),
-                    ),
-                    Stack(
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              30.0, 0.0, 0.0, 0.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              GoRouter.of(context).prepareAuthEvent();
-                              await authManager.signOut();
-                              GoRouter.of(context).clearRedirectLocation();
-
-                              context.goNamedAuth('LoginPage', context.mounted);
-                            },
-                            child: Icon(
-                              Icons.power_settings_new_rounded,
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              size: 24.0,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              30.0, 3.0, 0.0, 0.0),
-                          child: Container(
-                            width: 10.0,
-                            height: 10.0,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFEE3862),
-                              borderRadius: BorderRadius.circular(10.0),
-                              shape: BoxShape.rectangle,
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                width: 2.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
                 ),
               ),
             ],

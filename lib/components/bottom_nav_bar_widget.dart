@@ -45,7 +45,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
       child: Container(
-        width: 360.0,
+        width: double.infinity,
         height: 60.0,
         decoration: BoxDecoration(
           color: Color(0x99FFFFFF),

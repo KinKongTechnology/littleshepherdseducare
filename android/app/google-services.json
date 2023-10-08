@@ -7,6 +7,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:451679835353:android:297f807f3925b02dcedac8",
+        "android_client_info": {
+          "package_name": "com.kinkong.littleshepherdsattendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451679835353-cumveb9ipm42crp6h75f25qr1helapdf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kinkong.littleshepherdsattendance",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWo1meNE4rIcxXWHE7v8hz3hAPgnwbJ_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "451679835353-5d43kllgmbel7ljjhtufdpcgmj8jlin4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexeducare.dashboard"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:451679835353:android:c1a3404cd5d27cf0cedac8",
         "android_client_info": {
           "package_name": "com.kinkong.littleshepherdseducare"

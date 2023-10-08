@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 
 import '../../auth/base_auth_user_provider.dart';
 
@@ -79,15 +80,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? TransitionPageWidget()
-          : LoginPageWidget(),
+          ? LoginPageWidget()
+          : TransitionPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? TransitionPageWidget()
-              : LoginPageWidget(),
+              ? LoginPageWidget()
+              : TransitionPageWidget(),
           routes: [
             FFRoute(
               name: 'TransitionPage',
@@ -118,14 +119,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'ProfileSetting',
+              name: 'Registration',
               path: 'ProfileSetting',
-              builder: (context, params) => ProfileSettingWidget(),
+              builder: (context, params) => RegistrationWidget(),
             ),
             FFRoute(
               name: 'AttendanceList',
               path: 'attendanceList',
-              builder: (context, params) => AttendanceListWidget(),
+              builder: (context, params) => AttendanceListWidget(
+                studentAttendance: params.getParam('studentAttendance',
+                    ParamType.DocumentReference, false, ['student_detail']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -294,7 +298,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/loginPage';
+            return '/transitionPage';
           }
           return null;
         },
@@ -309,9 +313,13 @@ class FFRoute {
           final child = appStateNotifier.loading
               ? Container(
                   color: FlutterFlowTheme.of(context).primary,
-                  child: Image.asset(
-                    'assets/images/LS.png',
-                    fit: BoxFit.contain,
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/LS.png',
+                      width: 360.0,
+                      height: 500.0,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 )
               : page;

@@ -9,6 +9,7 @@ import 'schema/company_detail_record.dart';
 import 'schema/student_detail_record.dart';
 import 'schema/attendance_record.dart';
 import 'schema/users_record.dart';
+import 'schema/class_type_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -20,6 +21,7 @@ export 'schema/company_detail_record.dart';
 export 'schema/student_detail_record.dart';
 export 'schema/attendance_record.dart';
 export 'schema/users_record.dart';
+export 'schema/class_type_record.dart';
 
 /// Functions to query CompanyDetailRecords (as a Stream and as a Future).
 Future<int> queryCompanyDetailRecordCount({
@@ -164,6 +166,43 @@ Future<List<UsersRecord>> queryUsersRecordOnce({
     queryCollectionOnce(
       UsersRecord.collection,
       UsersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query ClassTypeRecords (as a Stream and as a Future).
+Future<int> queryClassTypeRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      ClassTypeRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<ClassTypeRecord>> queryClassTypeRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ClassTypeRecord.collection,
+      ClassTypeRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ClassTypeRecord>> queryClassTypeRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ClassTypeRecord.collection,
+      ClassTypeRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
