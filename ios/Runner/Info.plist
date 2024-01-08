@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>The Little Shepherds Portal</string>
+	<string>The Little Shepherds Educare</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -28,7 +28,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>com.googleusercontent.apps.451679835353-hhttun1q1u57djrejtrtojar0dt9hp88</string>
+                <string>com.googleusercontent.apps.451679835353-brrdel0utukqf4s8tvd9n8juuh15unn7</string>
                 
             </array>
         </dict>

@@ -1,20 +1,26 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/bottom_nav_bar_widget.dart';
+import '/backend/backend.dart';
+import '/bottom_sheet/school_news/school_news_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
+import 'dart:async';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'main_page_model.dart';
 export 'main_page_model.dart';
 
 class MainPageWidget extends StatefulWidget {
-  const MainPageWidget({Key? key}) : super(key: key);
+  const MainPageWidget({
+    Key? key,
+    this.userDetail,
+  }) : super(key: key);
+
+  final StudentSchemaRecord? userDetail;
 
   @override
   _MainPageWidgetState createState() => _MainPageWidgetState();
@@ -42,6 +48,15 @@ class _MainPageWidgetState extends State<MainPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -51,267 +66,409 @@ class _MainPageWidgetState extends State<MainPageWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primary,
-        body: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
-          child: Stack(
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 0.0, 20.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                'Welcome Back!',
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 0.0, 0.0, 0.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => Text(
-                                  currentUserDisplayName,
-                                  textAlign: TextAlign.start,
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+        body: SafeArea(
+          top: true,
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 15.0, 20.0),
+            child: Stack(
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              15.0, 0.0, 15.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                width: 245.0,
+                                height: 33.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0x00F9F7F4),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 0.0, 0.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        'Welcome Back!',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Titan One',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLargeFamily),
+                                            ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10.0, 0.0, 0.0, 0.0),
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            currentUserDisplayName,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLargeFamily,
+                                                  fontWeight: FontWeight.w600,
+                                                  fontStyle: FontStyle.italic,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLargeFamily),
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            Stack(
-                              alignment: AlignmentDirectional(1.0, -1.0),
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      80.0, 0.0, 0.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      GoRouter.of(context).prepareAuthEvent();
-                                      await authManager.signOut();
-                                      GoRouter.of(context)
-                                          .clearRedirectLocation();
+                              Align(
+                                alignment: AlignmentDirectional(1.0, 0.0),
+                                child: Stack(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  children: [
+                                    Align(
+                                      alignment: AlignmentDirectional(1.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            GoRouter.of(context)
+                                                .prepareAuthEvent();
+                                            await authManager.signOut();
+                                            GoRouter.of(context)
+                                                .clearRedirectLocation();
 
-                                      context.goNamedAuth(
-                                          'TransitionPage', context.mounted);
-                                    },
-                                    child: Icon(
-                                      Icons.power_settings_new_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 24.0,
+                                            context.goNamedAuth(
+                                                'TransitionPage',
+                                                context.mounted);
+                                          },
+                                          child: Icon(
+                                            Icons.power_settings_new_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 10.0, 10.0, 0.0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 252.0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16.0),
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Text(
+                                      'School News',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily: 'Titan One',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLargeFamily),
+                                          ),
                                     ),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      30.0, 3.0, 0.0, 0.0),
-                                  child: Container(
-                                    width: 10.0,
-                                    height: 10.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFEE3862),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                      shape: BoxShape.rectangle,
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        width: 2.0,
-                                      ),
-                                    ),
+                                      0.0, 10.0, 0.0, 0.0),
+                                  child: StreamBuilder<List<SchoolNewsRecord>>(
+                                    stream: querySchoolNewsRecord(),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<SchoolNewsRecord>
+                                          carouselSchoolNewsRecordList =
+                                          snapshot.data!;
+                                      if (carouselSchoolNewsRecordList
+                                          .isEmpty) {
+                                        return Image.asset(
+                                          'assets/images/app_icon.png',
+                                        );
+                                      }
+                                      return Container(
+                                        width: double.infinity,
+                                        height: 190.0,
+                                        child: CarouselSlider.builder(
+                                          itemCount:
+                                              carouselSchoolNewsRecordList
+                                                  .length,
+                                          itemBuilder:
+                                              (context, carouselIndex, _) {
+                                            final carouselSchoolNewsRecord =
+                                                carouselSchoolNewsRecordList[
+                                                    carouselIndex];
+                                            return Container(
+                                              width: double.infinity,
+                                              height: 27.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 4.0,
+                                                    color: Color(0x33000000),
+                                                    offset: Offset(0.0, 2.0),
+                                                  )
+                                                ],
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  width: 1.0,
+                                                ),
+                                              ),
+                                              child: SingleChildScrollView(
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.all(5.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                        child: Image.network(
+                                                          carouselSchoolNewsRecord
+                                                              .newsImage,
+                                                          width: 300.0,
+                                                          height: 105.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: FFButtonWidget(
+                                                        onPressed: () async {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return GestureDetector(
+                                                                onTap: () => _model
+                                                                        .unfocusNode
+                                                                        .canRequestFocus
+                                                                    ? FocusScope.of(
+                                                                            context)
+                                                                        .requestFocus(_model
+                                                                            .unfocusNode)
+                                                                    : FocusScope.of(
+                                                                            context)
+                                                                        .unfocus(),
+                                                                child: Padding(
+                                                                  padding: MediaQuery
+                                                                      .viewInsetsOf(
+                                                                          context),
+                                                                  child:
+                                                                      SchoolNewsWidget(
+                                                                    schoolNews:
+                                                                        carouselSchoolNewsRecord,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              safeSetState(
+                                                                  () {}));
+                                                        },
+                                                        text: 'Read More',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          height: 40.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      24.0,
+                                                                      0.0,
+                                                                      24.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondary,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .labelMediumFamily,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBtnText,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).labelMediumFamily),
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      20.0),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          carouselController:
+                                              _model.carouselController ??=
+                                                  CarouselController(),
+                                          options: CarouselOptions(
+                                            initialPage: min(
+                                                1,
+                                                carouselSchoolNewsRecordList
+                                                        .length -
+                                                    1),
+                                            viewportFraction: 0.5,
+                                            disableCenter: true,
+                                            enlargeCenterPage: true,
+                                            enlargeFactor: 0.25,
+                                            enableInfiniteScroll: true,
+                                            scrollDirection: Axis.horizontal,
+                                            autoPlay: false,
+                                            onPageChanged: (index, _) => _model
+                                                .carouselCurrentIndex = index,
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ),
                               ],
                             ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 25.0, 0.0, 20.0),
-                        child: Container(
-                          width: double.infinity,
-                          height: 160.0,
-                          child: CarouselSlider(
-                            items: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.asset(
-                                  'assets/images/334533608_1627327397726684_5204717270395876152_n.jpg',
-                                  width: 300.0,
-                                  height: 160.0,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.asset(
-                                  'assets/images/321516607_852286765990562_3903420182537643727_n.jpg',
-                                  width: 300.0,
-                                  height: 160.0,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: Image.asset(
-                                  'assets/images/329789908_6383144678386909_187814371054165952_n.png',
-                                  width: 300.0,
-                                  height: 160.0,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                            ],
-                            carouselController: _model.carouselController ??=
-                                CarouselController(),
-                            options: CarouselOptions(
-                              initialPage: 1,
-                              viewportFraction: 0.5,
-                              disableCenter: true,
-                              enlargeCenterPage: true,
-                              enlargeFactor: 0.25,
-                              enableInfiniteScroll: true,
-                              scrollDirection: Axis.horizontal,
-                              autoPlay: true,
-                              autoPlayAnimationDuration:
-                                  Duration(milliseconds: 800),
-                              autoPlayInterval: Duration(milliseconds: 4000),
-                              autoPlayCurve: Curves.linear,
-                              pauseAutoPlayInFiniteScroll: true,
-                              onPageChanged: (index, _) =>
-                                  _model.carouselCurrentIndex = index,
-                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 20.0, 20.0, 0.0),
-                        child: MasonryGridView.count(
-                          physics: const NeverScrollableScrollPhysics(),
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 10.0,
-                          mainAxisSpacing: 10.0,
-                          itemCount: 7,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) {
-                            return [
-                              () => Container(
-                                    width: 100.0,
-                                    height: 250.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(24.0),
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 10.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Image.asset(
-                                            'assets/images/CLASS_SCHEDULE.png',
-                                            width: 80.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            child: SelectionArea(
-                                                child: Text(
-                                              'Review your attendance!',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            )),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              context.pushNamed(
-                                                'AttendanceList',
-                                                extra: <String, dynamic>{
-                                                  kTransitionInfoKey:
-                                                      TransitionInfo(
-                                                    hasTransition: true,
-                                                    transitionType:
-                                                        PageTransitionType.fade,
-                                                    duration: Duration(
-                                                        milliseconds: 0),
-                                                  ),
-                                                },
-                                              );
-                                            },
-                                            text: 'View now',
-                                            options: FFButtonOptions(
-                                              width: 130.0,
-                                              height: 50.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0x000E1444),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmallFamily,
-                                                        color:
-                                                            Color(0xFF9D99F8),
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmallFamily),
-                                                      ),
-                                              elevation: 0.0,
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF9D99F8),
-                                                width: 2.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(50.0),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                              () => Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 50.0, 0.0, 0.0),
-                                    child: Container(
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 20.0, 10.0, 0.0),
+                          child: MasonryGridView.builder(
+                            physics: const NeverScrollableScrollPhysics(),
+                            gridDelegate:
+                                SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                            ),
+                            crossAxisSpacing: 10.0,
+                            mainAxisSpacing: 10.0,
+                            itemCount: 3,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return [
+                                () => Container(
                                       width: 100.0,
-                                      height: 250.0,
+                                      height: 180.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                                            .primaryBtnText,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4.0,
+                                            color: Color(0x33000000),
+                                            offset: Offset(0.0, 2.0),
+                                          )
+                                        ],
                                         borderRadius:
                                             BorderRadius.circular(24.0),
                                         border: Border.all(
@@ -328,32 +485,15 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               MainAxisAlignment.spaceAround,
                                           children: [
                                             Image.asset(
-                                              'assets/images/SCHOOL_BUS.png',
-                                              width: 90.0,
+                                              'assets/images/5_-_Math_Calculator.png',
+                                              width: 80.0,
                                               fit: BoxFit.cover,
                                             ),
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.00, 0.00),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                child: SelectionArea(
-                                                    child: Text(
-                                                  'In a rush? Request transportation',
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium,
-                                                )),
-                                              ),
-                                            ),
                                             FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
+                                              onPressed: () async {
+                                                context.pushNamed('ViewFees');
                                               },
-                                              text: 'Coming Soon!',
+                                              text: 'Fees',
                                               options: FFButtonOptions(
                                                 width: 130.0,
                                                 height: 50.0,
@@ -364,420 +504,243 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                     EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
-                                                color: Color(0x000E1444),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmall
+                                                        .labelLarge
                                                         .override(
                                                           fontFamily:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleSmallFamily,
-                                                          color:
-                                                              Color(0xFF9D99F8),
+                                                                  .labelLargeFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontWeight:
+                                                              FontWeight.bold,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
                                                               .containsKey(
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmallFamily),
+                                                                      .labelLargeFamily),
                                                         ),
                                                 elevation: 0.0,
                                                 borderSide: BorderSide(
-                                                  color: Color(0xFF9D99F8),
-                                                  width: 2.0,
+                                                  color: Color(0x00FFFFFF),
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(50.0),
+                                                    BorderRadius.circular(20.0),
                                               ),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ),
-                                  ),
-                              () => Container(
-                                    width: 100.0,
-                                    height: 250.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(24.0),
-                                      border: Border.all(
+                                () => Container(
+                                      width: 223.0,
+                                      height: 270.0,
+                                      decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryText,
+                                            .primary,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4.0,
+                                            color: Color(0x33000000),
+                                            offset: Offset(0.0, 2.0),
+                                          )
+                                        ],
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
                                       ),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 10.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Image.asset(
-                                            'assets/images/CALCULATOR.png',
-                                            width: 80.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            child: SelectionArea(
-                                                child: Text(
-                                              'Looking for your fees details?',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            )),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: 'Coming Soon!',
-                                            options: FFButtonOptions(
-                                              width: 130.0,
-                                              height: 50.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0x000E1444),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmallFamily,
-                                                        color:
-                                                            Color(0xFF9D99F8),
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmallFamily),
-                                                      ),
-                                              elevation: 0.0,
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF9D99F8),
-                                                width: 2.0,
-                                              ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 30.0, 0.0, 30.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(50.0),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                              () => Container(
-                                    width: 100.0,
-                                    height: 250.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(24.0),
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 10.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Image.asset(
-                                            'assets/images/AWARD.png',
-                                            width: 90.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            child: SelectionArea(
-                                                child: Text(
-                                              'Want to know your points?',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            )),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: 'Coming Soon!',
-                                            options: FFButtonOptions(
-                                              width: 130.0,
-                                              height: 50.0,
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0x000E1444),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmallFamily,
-                                                        color:
-                                                            Color(0xFF9D99F8),
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmallFamily),
-                                                      ),
-                                              elevation: 0.0,
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF9D99F8),
-                                                width: 2.0,
+                                              child: Image.asset(
+                                                'assets/images/app_icon.png',
+                                                width: 145.0,
+                                                height: 115.0,
+                                                fit: BoxFit.cover,
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(50.0),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                              () => Container(
-                                    width: 100.0,
-                                    height: 250.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      borderRadius: BorderRadius.circular(24.0),
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 10.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Image.asset(
-                                            'assets/images/illu-5.png',
-                                            width: 70.0,
-                                            fit: BoxFit.cover,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 16.0, 16.0, 16.0),
-                                            child: SelectionArea(
-                                                child: Text(
-                                              'Need help?',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            )),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              await launchURL(
-                                                  'https://wa.me/60189683001');
-                                            },
-                                            text: 'Start chat',
-                                            options: FFButtonOptions(
-                                              width: 130.0,
-                                              height: 50.0,
+                                            Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0x000E1444),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmallFamily,
-                                                        color:
-                                                            Color(0xFF9D99F8),
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmallFamily),
-                                                      ),
-                                              elevation: 0.0,
-                                              borderSide: BorderSide(
-                                                color: Color(0xFF9D99F8),
-                                                width: 2.0,
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Need Help?',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(50.0),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                              () => Container(
-                                    width: 100.0,
-                                    height: 300.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFF9D99F8),
-                                      borderRadius: BorderRadius.circular(24.0),
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 40.0, 0.0, 40.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 16.0, 16.0, 16.0),
-                                            child: SelectionArea(
-                                                child: Text(
-                                              'Can\'t find what you\'re looking for?',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMediumFamily,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                      ),
-                                            )),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              await launchUrl(Uri(
-                                                  scheme: 'mailto',
-                                                  path:
-                                                      'admin@littleshepherdseducare.com',
-                                                  query: {
-                                                    'subject':
-                                                        'General Enquiry',
-                                                  }
-                                                      .entries
-                                                      .map((MapEntry<String,
-                                                                  String>
-                                                              e) =>
-                                                          '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                                                      .join('&')));
-                                            },
-                                            text: 'Contact us',
-                                            options: FFButtonOptions(
-                                              width: 130.0,
-                                              height: 50.0,
+                                            Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0x000E1444),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
+                                                  .fromSTEB(
+                                                      0.0, 10.0, 0.0, 0.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  unawaited(
+                                                    () async {
+                                                      await launchURL(
+                                                          'https://wa.me/60189683001');
+                                                    }(),
+                                                  );
+                                                },
+                                                text: 'Chat with us',
+                                                options: FFButtonOptions(
+                                                  width: 130.0,
+                                                  height: 50.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondary,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .labelLarge
                                                       .override(
-                                                        fontFamily:
+                                                        fontFamily: 'Noto Sans',
+                                                        color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .titleSmallFamily,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
+                                                                .secondaryText,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
                                                             .containsKey(
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmallFamily),
+                                                                    .labelLargeFamily),
                                                       ),
-                                              elevation: 0.0,
-                                              borderSide: BorderSide(
+                                                  elevation: 0.0,
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x009D99F8),
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20.0),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                () => Container(
+                                      width: 100.0,
+                                      height: 180.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 4.0,
+                                            color: Color(0x33000000),
+                                            offset: Offset(0.0, 2.0),
+                                          )
+                                        ],
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 10.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Image.asset(
+                                              'assets/images/19_-_Exam.png',
+                                              width: 90.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                context
+                                                    .pushNamed('CommentForm');
+                                              },
+                                              text: 'Comment',
+                                              options: FFButtonOptions(
+                                                width: 130.0,
+                                                height: 50.0,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                width: 2.0,
+                                                        .secondary,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelLargeFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelLargeFamily),
+                                                        ),
+                                                elevation: 0.0,
+                                                borderSide: BorderSide(
+                                                  color: Colors.transparent,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20.0),
                                               ),
-                                              borderRadius:
-                                                  BorderRadius.circular(50.0),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                              () => Container(
-                                    width: 100.0,
-                                    height: 150.0,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(24.0),
-                                    ),
-                                  ),
-                            ][index]();
-                          },
+                              ][index]();
+                            },
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(0.00, 1.00),
-                child: ClipRRect(
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(
-                      sigmaX: 3.0,
-                      sigmaY: 3.0,
-                    ),
-                    child: wrapWithModel(
-                      model: _model.bottomNavBarModel,
-                      updateCallback: () => setState(() {}),
-                      child: BottomNavBarWidget(),
+                      ],
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

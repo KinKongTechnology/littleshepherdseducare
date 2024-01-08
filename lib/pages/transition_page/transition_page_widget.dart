@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'transition_page_model.dart';
@@ -36,6 +37,15 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -57,7 +67,7 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(30.0),
                   child: Image.asset(
-                    'assets/images/LS.png',
+                    'assets/images/app_icon.png',
                     width: double.infinity,
                     height: 261.0,
                     fit: BoxFit.contain,
@@ -65,7 +75,7 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.00, 0.00),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   child: SelectionArea(
@@ -75,9 +85,9 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           fontFamily:
                               FlutterFlowTheme.of(context).displaySmallFamily,
-                          color: FlutterFlowTheme.of(context).primaryText,
+                          color: FlutterFlowTheme.of(context).secondary,
                           fontSize: 30.0,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.normal,
                           useGoogleFonts: GoogleFonts.asMap().containsKey(
                               FlutterFlowTheme.of(context).displaySmallFamily),
                         ),
@@ -85,7 +95,7 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.00, 0.00),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 24.0, 0.0),
                   child: SelectionArea(
@@ -104,7 +114,7 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.00, 0.00),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   height: MediaQuery.sizeOf(context).height * 0.392,
@@ -121,7 +131,7 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.00, 0.00),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
@@ -147,17 +157,8 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .titleMediumFamily,
-                                    fontSize: 16.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .titleMediumFamily),
-                                  ),
+                              textStyle:
+                                  FlutterFlowTheme.of(context).labelLarge,
                               elevation: 3.0,
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).primaryText,
@@ -169,7 +170,7 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.00, 0.00),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
@@ -186,7 +187,7 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                                 },
                               );
                             },
-                            text: 'Registered user?  Continue here',
+                            text: 'Registered user?  Login here',
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 50.0,
@@ -194,19 +195,18 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                                   24.0, 0.0, 24.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primaryText,
+                              color: FlutterFlowTheme.of(context).secondary,
                               textStyle: FlutterFlowTheme.of(context)
-                                  .titleMedium
+                                  .labelLarge
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
-                                        .titleMediumFamily,
+                                        .labelLargeFamily,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBtnText,
-                                    fontSize: 16.0,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
-                                                .titleMediumFamily),
+                                                .labelLargeFamily),
                                   ),
                               elevation: 3.0,
                               borderSide: BorderSide(
@@ -219,13 +219,13 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.00, 0.00),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.00, 1.00),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 30.0, 0.0, 0.0),
@@ -237,7 +237,7 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.00, 0.00),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     3.0, 32.0, 0.0, 0.0),

@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 
-import '../../auth/base_auth_user_provider.dart';
+import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
@@ -98,7 +98,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'MainPage',
               path: 'MainPage',
-              builder: (context, params) => MainPageWidget(),
+              requireAuth: true,
+              asyncParams: {
+                'userDetail': getDoc(
+                    ['student_schema'], StudentSchemaRecord.fromSnapshot),
+              },
+              builder: (context, params) => MainPageWidget(
+                userDetail: params.getParam('userDetail', ParamType.Document),
+              ),
             ),
             FFRoute(
               name: 'CreateAccount',
@@ -113,9 +120,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'ProfilePage',
               path: 'profilePage',
+              asyncParams: {
+                'studentprofile': getDoc(
+                    ['student_schema'], StudentSchemaRecord.fromSnapshot),
+              },
               builder: (context, params) => ProfilePageWidget(
-                studentdetail:
-                    params.getParam('studentdetail', ParamType.String),
+                studentprofile:
+                    params.getParam('studentprofile', ParamType.Document),
               ),
             ),
             FFRoute(
@@ -124,12 +135,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => RegistrationWidget(),
             ),
             FFRoute(
-              name: 'AttendanceList',
-              path: 'attendanceList',
-              builder: (context, params) => AttendanceListWidget(
-                studentAttendance: params.getParam('studentAttendance',
-                    ParamType.DocumentReference, false, ['student_detail']),
+              name: 'ViewFees',
+              path: 'viewFees',
+              asyncParams: {
+                'studentFees': getDoc(['student_schema', 'studentFees'],
+                    StudentFeesRecord.fromSnapshot),
+              },
+              builder: (context, params) => ViewFeesWidget(
+                studentFees: params.getParam('studentFees', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'AttendanceView',
+              path: 'attendanceView',
+              asyncParams: {
+                'studentAttendance': getDoc(
+                    ['student_schema', 'studentAttendance'],
+                    StudentAttendanceRecord.fromSnapshot),
+                'studentDetail': getDoc(
+                    ['student_schema'], StudentSchemaRecord.fromSnapshot),
+              },
+              builder: (context, params) => AttendanceViewWidget(
+                studentAttendance:
+                    params.getParam('studentAttendance', ParamType.Document),
+                studentDetail:
+                    params.getParam('studentDetail', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'CommentForm',
+              path: 'commentForm',
+              builder: (context, params) => CommentFormWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -311,17 +347,15 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: FlutterFlowTheme.of(context).primary,
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/LS.png',
-                      width: 360.0,
-                      height: 500.0,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                )
+              ? isWeb
+                  ? Container()
+                  : Container(
+                      color: FlutterFlowTheme.of(context).primary,
+                      child: Image.asset(
+                        'assets/images/app_icon.png',
+                        fit: BoxFit.contain,
+                      ),
+                    )
               : page;
 
           final transitionInfo = state.transitionInfo;
@@ -330,13 +364,20 @@ class FFRoute {
                   key: state.pageKey,
                   child: child,
                   transitionDuration: transitionInfo.duration,
-                  transitionsBuilder: PageTransition(
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) =>
+                          PageTransition(
                     type: transitionInfo.transitionType,
                     duration: transitionInfo.duration,
                     reverseDuration: transitionInfo.duration,
                     alignment: transitionInfo.alignment,
                     child: child,
-                  ).transitionsBuilder,
+                  ).buildTransitions(
+                    context,
+                    animation,
+                    secondaryAnimation,
+                    child,
+                  ),
                 )
               : MaterialPage(key: state.pageKey, child: child);
         },

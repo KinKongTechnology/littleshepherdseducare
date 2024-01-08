@@ -224,6 +224,94 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451679835353:android:8798939023e7959ecedac8",
+        "android_client_info": {
+          "package_name": "com.standfront.thelittleshepherdseducare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451679835353-5v5dii4rlfuiqdf3o8mludojondvs2ra.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.standfront.thelittleshepherdseducare",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWo1meNE4rIcxXWHE7v8hz3hAPgnwbJ_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "451679835353-5d43kllgmbel7ljjhtufdpcgmj8jlin4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexeducare.dashboard"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451679835353:android:59c537aab74be50bcedac8",
+        "android_client_info": {
+          "package_name": "standfront.thelittleshepherdseducare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451679835353-n19vjreb4lqmvhkcpf25in4qmeokcl7t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "standfront.thelittleshepherdseducare",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWo1meNE4rIcxXWHE7v8hz3hAPgnwbJ_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451679835353-8l7b3a0le2mnsokp934e4iu7r86i3b6s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "451679835353-5d43kllgmbel7ljjhtufdpcgmj8jlin4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nexeducare.dashboard"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

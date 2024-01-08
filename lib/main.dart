@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
       ..listen((user) => _appStateNotifier.update(user));
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      Duration(milliseconds: 1000),
+      Duration(milliseconds: isWeb ? 0 : 1000),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -82,7 +82,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'The Little Shepherds Educare',
+      title: 'The Little Shepherds Educare Admin Platform',
       localizationsDelegates: [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
@@ -93,7 +93,19 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(
         brightness: Brightness.light,
-        scrollbarTheme: ScrollbarThemeData(),
+        scrollbarTheme: ScrollbarThemeData(
+          thickness: MaterialStateProperty.all(1.0),
+          radius: Radius.circular(12.0),
+          thumbColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.dragged)) {
+              return Color(4281090397);
+            }
+            if (states.contains(MaterialState.hovered)) {
+              return Color(4281090397);
+            }
+            return Color(4281090397);
+          }),
+        ),
       ),
       themeMode: _themeMode,
       routerConfig: _router,

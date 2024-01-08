@@ -1,39 +1,68 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /CompanyDetail/{document} {
+    match /school_news/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;
       allow delete: if true;
     }
 
-    match /student_detail/{document} {
+    match /student_schema/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;
       allow delete: if true;
     }
 
-    match /attendance/{document} {
+    match /student_schema/{parent}/studentFees/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;
       allow delete: if true;
     }
 
-    match /users/{document} {
+    match /{path=**}/studentFees/{document} {
+      allow read: if true;
+    }
+
+
+    match /student_schema/{parent}/studentPerformance/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;
       allow delete: if true;
     }
 
-    match /class_type/{document} {
+    match /{path=**}/studentPerformance/{document} {
+      allow read: if true;
+    }
+
+
+    match /student_schema/{parent}/studentAttendance/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if true;
       allow delete: if true;
+    }
+
+    match /{path=**}/studentAttendance/{document} {
+      allow read: if true;
+    }
+
+
+    match /setting/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /parent_comment/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
     }
   }
 }

@@ -1,4 +1,4 @@
-package com.kinkong.thelittleshepherdseducare
+package standfront.thelittleshepherdseducare
 
 import io.flutter.embedding.android.FlutterActivity
 
