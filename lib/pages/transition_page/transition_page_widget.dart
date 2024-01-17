@@ -9,7 +9,7 @@ import 'transition_page_model.dart';
 export 'transition_page_model.dart';
 
 class TransitionPageWidget extends StatefulWidget {
-  const TransitionPageWidget({Key? key}) : super(key: key);
+  const TransitionPageWidget({super.key});
 
   @override
   _TransitionPageWidgetState createState() => _TransitionPageWidgetState();
@@ -56,14 +56,14 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primary,
         body: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(30.0),
                   child: Image.asset(
@@ -75,9 +75,9 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                   child: SelectionArea(
                       child: Text(
                     'Get Ready\nFor Fun Learning',
@@ -95,9 +95,9 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 24.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 24.0, 0.0),
                   child: SelectionArea(
                       child: Text(
                     'Find the perfect educare for the loved ',
@@ -114,7 +114,7 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   height: MediaQuery.sizeOf(context).height * 0.392,
@@ -131,16 +131,16 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(
                                 'CreateAccount',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -152,9 +152,9 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle:
@@ -170,16 +170,16 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(
                                 'LoginPage',
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.fade,
                                     duration: Duration(milliseconds: 0),
@@ -191,9 +191,9 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).secondary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -219,15 +219,15 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.0, 1.0),
+                              alignment: const AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 30.0, 0.0, 0.0),
                                 child: Text(
                                   'The Little Shepherds Educare',
@@ -237,9 +237,9 @@ class _TransitionPageWidgetState extends State<TransitionPageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     3.0, 32.0, 0.0, 0.0),
                                 child: Text(
                                   '( KT0546947-D )',

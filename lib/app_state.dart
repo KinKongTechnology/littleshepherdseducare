@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -26,8 +23,8 @@ class FFAppState extends ChangeNotifier {
 
   UserStruct _tempregisterdetail = UserStruct();
   UserStruct get tempregisterdetail => _tempregisterdetail;
-  set tempregisterdetail(UserStruct _value) {
-    _tempregisterdetail = _value;
+  set tempregisterdetail(UserStruct value) {
+    _tempregisterdetail = value;
   }
 
   void updateTempregisterdetailStruct(Function(UserStruct) updateFn) {
@@ -36,14 +33,20 @@ class FFAppState extends ChangeNotifier {
 
   String _commentiImage = '';
   String get commentiImage => _commentiImage;
-  set commentiImage(String _value) {
-    _commentiImage = _value;
+  set commentiImage(String value) {
+    _commentiImage = value;
   }
 
   String _paymentSlip = '';
   String get paymentSlip => _paymentSlip;
-  set paymentSlip(String _value) {
-    _paymentSlip = _value;
+  set paymentSlip(String value) {
+    _paymentSlip = value;
+  }
+
+  bool _deleteAccount = false;
+  bool get deleteAccount => _deleteAccount;
+  set deleteAccount(bool value) {
+    _deleteAccount = value;
   }
 }
 

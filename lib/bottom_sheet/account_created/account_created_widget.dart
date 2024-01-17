@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'account_created_model.dart';
@@ -12,9 +11,9 @@ export 'account_created_model.dart';
 
 class AccountCreatedWidget extends StatefulWidget {
   const AccountCreatedWidget({
-    Key? key,
+    super.key,
     this.schoolNews,
-  }) : super(key: key);
+  });
 
   final SchoolNewsRecord? schoolNews;
 
@@ -57,27 +56,27 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.circular(8.0),
       ),
-      alignment: AlignmentDirectional(0.0, -1.0),
+      alignment: const AlignmentDirectional(0.0, -1.0),
       child: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xCCFFFFFF),
         ),
-        alignment: AlignmentDirectional(0.0, -1.0),
+        alignment: const AlignmentDirectional(0.0, -1.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
               child: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: Container(
                     width: double.infinity,
                     height: MediaQuery.sizeOf(context).height * 0.9,
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       maxWidth: 700.0,
                     ),
                     decoration: BoxDecoration(
@@ -86,17 +85,17 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                         BoxShadow(
                           blurRadius: 12.0,
                           color: FlutterFlowTheme.of(context).accent1,
-                          offset: Offset(0.0, 5.0),
+                          offset: const Offset(0.0, 5.0),
                         )
                       ],
                       borderRadius: BorderRadius.circular(16.0),
                     ),
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -109,13 +108,13 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                                   width: 100.0,
                                   height: 100.0,
                                   fit: BoxFit.cover,
-                                  alignment: Alignment(0.0, 0.0),
+                                  alignment: const Alignment(0.0, 0.0),
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
@@ -125,7 +124,7 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.0, 1.0),
+                                            const AlignmentDirectional(0.0, 1.0),
                                         child: Text(
                                           'The Little Shepherds Educare',
                                           style: FlutterFlowTheme.of(context)
@@ -149,9 +148,9 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       3.0, 6.0, 0.0, 0.0),
                                   child: Text(
                                     '( KT0546947-D )',
@@ -171,9 +170,9 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 20.0, 10.0, 0.0),
                                   child: Container(
                                     width: 300.0,
@@ -181,7 +180,7 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x33000000),
@@ -195,10 +194,10 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     30.0, 30.0, 30.0, 20.0),
                                             child: AutoSizeText(
                                               'Account successfully created !',
@@ -211,10 +210,10 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: Text(
                                               'Please proceed next step...',
@@ -247,26 +246,26 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 100.0, 0.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       context.pushNamed('LoginPage');
                                     },
                                     text: 'Next',
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.double_arrow_sharp,
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(
                                       width: 300.0,
                                       height: 44.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           24.0, 0.0, 24.0, 0.0),
                                       iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
@@ -283,7 +282,7 @@ class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {
                                                         .titleSmallFamily),
                                           ),
                                       elevation: 3.0,
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1.0,
                                       ),

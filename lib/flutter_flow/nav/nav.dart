@@ -1,21 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
-import '/backend/schema/structs/index.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -80,20 +73,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? LoginPageWidget()
-          : TransitionPageWidget(),
+          ? const LoginPageWidget()
+          : const TransitionPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? LoginPageWidget()
-              : TransitionPageWidget(),
+              ? const LoginPageWidget()
+              : const TransitionPageWidget(),
           routes: [
             FFRoute(
               name: 'TransitionPage',
               path: 'transitionPage',
-              builder: (context, params) => TransitionPageWidget(),
+              builder: (context, params) => const TransitionPageWidget(),
             ),
             FFRoute(
               name: 'MainPage',
@@ -110,12 +103,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'CreateAccount',
               path: 'createAccount',
-              builder: (context, params) => CreateAccountWidget(),
+              builder: (context, params) => const CreateAccountWidget(),
             ),
             FFRoute(
               name: 'LoginPage',
               path: 'loginPage',
-              builder: (context, params) => LoginPageWidget(),
+              builder: (context, params) => const LoginPageWidget(),
             ),
             FFRoute(
               name: 'ProfilePage',
@@ -132,7 +125,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Registration',
               path: 'ProfileSetting',
-              builder: (context, params) => RegistrationWidget(),
+              builder: (context, params) => const RegistrationWidget(),
             ),
             FFRoute(
               name: 'ViewFees',
@@ -165,7 +158,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'CommentForm',
               path: 'commentForm',
-              builder: (context, params) => CommentFormWidget(),
+              builder: (context, params) => const CommentFormWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -398,7 +391,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

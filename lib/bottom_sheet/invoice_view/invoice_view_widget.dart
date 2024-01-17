@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'invoice_view_model.dart';
@@ -13,9 +12,9 @@ export 'invoice_view_model.dart';
 
 class InvoiceViewWidget extends StatefulWidget {
   const InvoiceViewWidget({
-    Key? key,
+    super.key,
     this.invoiceDetail,
-  }) : super(key: key);
+  });
 
   final StudentFeesRecord? invoiceDetail;
 
@@ -42,63 +41,63 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
     _model.monthFocusNode ??= FocusNode();
 
     _model.monthlyFeesController ??= TextEditingController(
-        text: widget.invoiceDetail?.monthlyFees?.toString());
+        text: widget.invoiceDetail?.monthlyFees.toString());
     _model.monthlyFeesFocusNode ??= FocusNode();
 
     _model.dailyFeesController ??= TextEditingController(
-        text: widget.invoiceDetail?.totalDayFees?.toString());
+        text: widget.invoiceDetail?.totalDayFees.toString());
     _model.dailyFeesFocusNode ??= FocusNode();
 
     _model.transportFeesController ??= TextEditingController(
-        text: widget.invoiceDetail?.transportFees?.toString());
+        text: widget.invoiceDetail?.transportFees.toString());
     _model.transportFeesFocusNode ??= FocusNode();
 
     _model.dineFeesController ??=
-        TextEditingController(text: widget.invoiceDetail?.dineFees?.toString());
+        TextEditingController(text: widget.invoiceDetail?.dineFees.toString());
     _model.dineFeesFocusNode ??= FocusNode();
 
     _model.oneSubjectFeesController ??= TextEditingController(
-        text: widget.invoiceDetail?.subjectFees?.toString());
+        text: widget.invoiceDetail?.subjectFees.toString());
     _model.oneSubjectFeesFocusNode ??= FocusNode();
 
     _model.fullSubjectFeesController ??= TextEditingController(
-        text: widget.invoiceDetail?.fullSubjectFees?.toString());
+        text: widget.invoiceDetail?.fullSubjectFees.toString());
     _model.fullSubjectFeesFocusNode ??= FocusNode();
 
     _model.extensionFeesController ??= TextEditingController(
-        text: widget.invoiceDetail?.extensionProgram?.toString());
+        text: widget.invoiceDetail?.extensionProgram.toString());
     _model.extensionFeesFocusNode ??= FocusNode();
 
     _model.onlineFeesController ??= TextEditingController(
-        text: widget.invoiceDetail?.onlineFees?.toString());
+        text: widget.invoiceDetail?.onlineFees.toString());
     _model.onlineFeesFocusNode ??= FocusNode();
 
     _model.physicalFeesController ??= TextEditingController(
-        text: widget.invoiceDetail?.offlineFees?.toString());
+        text: widget.invoiceDetail?.offlineFees.toString());
     _model.physicalFeesFocusNode ??= FocusNode();
 
     _model.registrationFeesController ??= TextEditingController(
-        text: widget.invoiceDetail?.registrationFees?.toString());
+        text: widget.invoiceDetail?.registrationFees.toString());
     _model.registrationFeesFocusNode ??= FocusNode();
 
     _model.bookFeesController ??=
-        TextEditingController(text: widget.invoiceDetail?.bookFees?.toString());
+        TextEditingController(text: widget.invoiceDetail?.bookFees.toString());
     _model.bookFeesFocusNode ??= FocusNode();
 
     _model.extraClassController ??= TextEditingController(
-        text: widget.invoiceDetail?.extraClasses?.toString());
+        text: widget.invoiceDetail?.extraClasses.toString());
     _model.extraClassFocusNode ??= FocusNode();
 
     _model.miscFeesController ??=
-        TextEditingController(text: widget.invoiceDetail?.miscFees?.toString());
+        TextEditingController(text: widget.invoiceDetail?.miscFees.toString());
     _model.miscFeesFocusNode ??= FocusNode();
 
     _model.referralDiscountController ??=
-        TextEditingController(text: widget.invoiceDetail?.referral?.toString());
+        TextEditingController(text: widget.invoiceDetail?.referral.toString());
     _model.referralDiscountFocusNode ??= FocusNode();
 
     _model.rebateRefundController ??=
-        TextEditingController(text: widget.invoiceDetail?.rebate?.toString());
+        TextEditingController(text: widget.invoiceDetail?.rebate.toString());
     _model.rebateRefundFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -125,7 +124,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
       child: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xCCFFFFFF),
         ),
         child: Column(
@@ -134,13 +133,13 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
           children: [
             Expanded(
               child: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: Container(
                     width: double.infinity,
                     height: MediaQuery.sizeOf(context).height * 0.9,
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       maxWidth: 700.0,
                     ),
                     decoration: BoxDecoration(
@@ -149,22 +148,22 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                         BoxShadow(
                           blurRadius: 12.0,
                           color: FlutterFlowTheme.of(context).accent1,
-                          offset: Offset(0.0, 5.0),
+                          offset: const Offset(0.0, 5.0),
                         )
                       ],
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(1.0, 0.0),
+                              alignment: const AlignmentDirectional(1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsets.all(10.0),
+                                padding: const EdgeInsets.all(10.0),
                                 child: FlutterFlowIconButton(
                                   borderColor: Colors.transparent,
                                   borderRadius: 25.0,
@@ -191,13 +190,13 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                 width: 150.0,
                                 height: 150.0,
                                 fit: BoxFit.cover,
-                                alignment: Alignment(0.0, 0.0),
+                                alignment: const Alignment(0.0, 0.0),
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 10.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
@@ -205,7 +204,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                      alignment: const AlignmentDirectional(0.0, 1.0),
                                       child: Text(
                                         'The Little Shepherds Educare',
                                         style: FlutterFlowTheme.of(context)
@@ -229,9 +228,9 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     3.0, 6.0, 0.0, 0.0),
                                 child: Text(
                                   '( KT0546947-D )',
@@ -250,7 +249,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 12.0, 24.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -267,7 +266,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 12.0, 0.0, 12.0),
                                               child: Text(
@@ -279,7 +278,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                             ),
                                             Expanded(
                                               child: Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.0, 0.0),
                                                 child: TextFormField(
                                                   controller:
@@ -317,7 +316,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: Container(
                                             width: 580.0,
@@ -336,7 +335,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                               ),
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
@@ -353,7 +352,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -361,10 +360,10 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 0.0),
                                                   child: Text(
@@ -380,10 +379,10 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 0.0),
                                                   child: Text(
@@ -409,17 +408,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                             ),
                             if (widget.invoiceDetail?.monthlyFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -429,12 +428,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller: _model.monthlyFeesController,
@@ -453,7 +452,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -478,17 +477,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.totalDayFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -498,12 +497,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller: _model.dailyFeesController,
@@ -522,7 +521,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -547,17 +546,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.transportFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -567,12 +566,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller:
@@ -592,7 +591,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -617,17 +616,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.dineFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -637,12 +636,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller: _model.dineFeesController,
@@ -661,7 +660,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -686,17 +685,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.subjectFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -706,12 +705,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller:
@@ -731,7 +730,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -756,17 +755,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.fullSubjectFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -776,12 +775,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller:
@@ -802,7 +801,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -827,17 +826,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.extensionProgram != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -847,12 +846,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller:
@@ -872,7 +871,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -897,17 +896,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.onlineFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -917,12 +916,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller: _model.onlineFeesController,
@@ -941,7 +940,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -966,17 +965,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.offlineFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -986,12 +985,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller: _model.physicalFeesController,
@@ -1010,7 +1009,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -1035,17 +1034,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.registrationFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -1055,12 +1054,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller:
@@ -1081,7 +1080,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -1106,17 +1105,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.bookFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -1126,12 +1125,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller: _model.bookFeesController,
@@ -1150,7 +1149,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -1175,17 +1174,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.extraClasses != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -1195,12 +1194,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller: _model.extraClassController,
@@ -1219,7 +1218,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -1244,17 +1243,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             if (widget.invoiceDetail?.miscFees != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 10.0, 20.0, 10.0),
                                 child: Container(
                                   width: double.infinity,
                                   height: 60.0,
-                                  constraints: BoxConstraints(
+                                  constraints: const BoxConstraints(
                                     maxWidth: 520.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -1264,12 +1263,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                     shape: BoxShape.rectangle,
                                     border: Border.all(
-                                      color: Color(0xFFE0E3E7),
+                                      color: const Color(0xFFE0E3E7),
                                       width: 1.0,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 5.0, 10.0, 5.0),
                                     child: TextFormField(
                                       controller: _model.miscFeesController,
@@ -1288,7 +1287,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
                                         contentPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 10.0, 0.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -1312,9 +1311,9 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                 ),
                               ),
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: const AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 0.0, 0.0),
                                 child: Container(
                                   width: 136.0,
@@ -1328,9 +1327,9 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                     ),
                                   ),
                                   child: Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 0.0, 0.0, 0.0),
                                       child: Text(
                                         '- Deduction',
@@ -1358,17 +1357,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 10.0, 20.0, 10.0),
                               child: Container(
                                 width: double.infinity,
                                 height: 60.0,
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   maxWidth: 520.0,
                                 ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
@@ -1378,12 +1377,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                   borderRadius: BorderRadius.circular(12.0),
                                   shape: BoxShape.rectangle,
                                   border: Border.all(
-                                    color: Color(0xFFE0E3E7),
+                                    color: const Color(0xFFE0E3E7),
                                     width: 1.0,
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 5.0, 10.0, 5.0),
                                   child: TextFormField(
                                     controller:
@@ -1403,7 +1402,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                       errorBorder: InputBorder.none,
                                       focusedErrorBorder: InputBorder.none,
                                       contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               10.0, 0.0, 0.0, 0.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -1427,17 +1426,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 10.0, 20.0, 10.0),
                               child: Container(
                                 width: double.infinity,
                                 height: 60.0,
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   maxWidth: 520.0,
                                 ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
@@ -1447,12 +1446,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                   borderRadius: BorderRadius.circular(12.0),
                                   shape: BoxShape.rectangle,
                                   border: Border.all(
-                                    color: Color(0xFFE0E3E7),
+                                    color: const Color(0xFFE0E3E7),
                                     width: 1.0,
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 5.0, 10.0, 5.0),
                                   child: TextFormField(
                                     controller: _model.rebateRefundController,
@@ -1471,7 +1470,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                       errorBorder: InputBorder.none,
                                       focusedErrorBorder: InputBorder.none,
                                       contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               10.0, 0.0, 0.0, 0.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -1495,17 +1494,17 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 10.0, 20.0, 10.0),
                               child: Container(
                                 width: double.infinity,
                                 height: 60.0,
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   maxWidth: 520.0,
                                 ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
@@ -1515,12 +1514,12 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                   borderRadius: BorderRadius.circular(12.0),
                                   shape: BoxShape.rectangle,
                                   border: Border.all(
-                                    color: Color(0xFFE0E3E7),
+                                    color: const Color(0xFFE0E3E7),
                                     width: 1.0,
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 5.0, 10.0, 5.0),
                                   child: Text(
                                     widget.invoiceDetail!.remarks,
@@ -1531,7 +1530,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 10.0, 20.0, 10.0),
                               child: Container(
                                 width: double.infinity,
@@ -1544,7 +1543,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                       blurRadius: 4.0,
                                       color:
                                           FlutterFlowTheme.of(context).accent1,
-                                      offset: Offset(0.0, 2.0),
+                                      offset: const Offset(0.0, 2.0),
                                     )
                                   ],
                                   borderRadius: BorderRadius.circular(12.0),
@@ -1554,9 +1553,9 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.0, 0.0),
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             20.0, 10.0, 0.0, 0.0),
                                         child: Text(
                                           'Total Fees :',
@@ -1580,7 +1579,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         formatNumber(
                                           widget.invoiceDetail!.totalFees,
@@ -1620,9 +1619,9 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 30.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 30.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     await showModalBottomSheet(
@@ -1633,7 +1632,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                       builder: (context) {
                         return Padding(
                           padding: MediaQuery.viewInsetsOf(context),
-                          child: PayInstructionWidget(),
+                          child: const PayInstructionWidget(),
                         );
                       },
                     ).then((value) => safeSetState(() {}));
@@ -1641,7 +1640,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                     Navigator.pop(context);
                   },
                   text: 'Pay',
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.double_arrow_sharp,
                     size: 15.0,
                   ),
@@ -1649,9 +1648,9 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                     width: 300.0,
                     height: 60.0,
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryText,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily:
@@ -1661,7 +1660,7 @@ class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {
                               FlutterFlowTheme.of(context).titleSmallFamily),
                         ),
                     elevation: 3.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),

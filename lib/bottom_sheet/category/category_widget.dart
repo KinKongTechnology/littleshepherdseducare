@@ -3,14 +3,12 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'category_model.dart';
 export 'category_model.dart';
 
 class CategoryWidget extends StatefulWidget {
-  const CategoryWidget({Key? key}) : super(key: key);
+  const CategoryWidget({super.key});
 
   @override
   _CategoryWidgetState createState() => _CategoryWidgetState();
@@ -47,7 +45,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
     return FlutterFlowDropDown<String>(
       controller: _model.categorydropdownValueController ??=
           FormFieldController<String>(null),
-      options: ['Option 1'],
+      options: const ['Option 1'],
       onChanged: (val) => setState(() => _model.categorydropdownValue = val),
       width: 300.0,
       height: 50.0,
@@ -63,7 +61,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
       borderColor: FlutterFlowTheme.of(context).alternate,
       borderWidth: 2.0,
       borderRadius: 8.0,
-      margin: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+      margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
       hidesUnderline: true,
       isSearchable: false,
       isMultiSelect: false,

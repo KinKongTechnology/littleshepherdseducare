@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -8,7 +7,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,9 +16,9 @@ export 'pay_instruction_model.dart';
 
 class PayInstructionWidget extends StatefulWidget {
   const PayInstructionWidget({
-    Key? key,
+    super.key,
     this.studentFees,
-  }) : super(key: key);
+  });
 
   final StudentFeesRecord? studentFees;
 
@@ -63,27 +61,27 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.circular(8.0),
       ),
-      alignment: AlignmentDirectional(0.0, -1.0),
+      alignment: const AlignmentDirectional(0.0, -1.0),
       child: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xCCFFFFFF),
         ),
-        alignment: AlignmentDirectional(0.0, -1.0),
+        alignment: const AlignmentDirectional(0.0, -1.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
               child: Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: Container(
                     width: double.infinity,
                     height: MediaQuery.sizeOf(context).height * 0.9,
-                    constraints: BoxConstraints(
+                    constraints: const BoxConstraints(
                       maxWidth: 700.0,
                     ),
                     decoration: BoxDecoration(
@@ -92,18 +90,18 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                         BoxShadow(
                           blurRadius: 12.0,
                           color: FlutterFlowTheme.of(context).accent1,
-                          offset: Offset(0.0, 5.0),
+                          offset: const Offset(0.0, 5.0),
                         )
                       ],
                       borderRadius: BorderRadius.circular(16.0),
                     ),
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Stack(
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 50.0, 0.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -117,13 +115,13 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                       width: 100.0,
                                       height: 100.0,
                                       fit: BoxFit.cover,
-                                      alignment: Alignment(0.0, 0.0),
+                                      alignment: const Alignment(0.0, 0.0),
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
@@ -134,7 +132,7 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 1.0),
+                                                const AlignmentDirectional(0.0, 1.0),
                                             child: Text(
                                               'The Little Shepherds Educare',
                                               style:
@@ -161,9 +159,9 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           3.0, 6.0, 0.0, 0.0),
                                       child: Text(
                                         '( KT0546947-D )',
@@ -185,9 +183,9 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 20.0, 10.0, 0.0),
                                       child: Container(
                                         width: 300.0,
@@ -195,7 +193,7 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
-                                          boxShadow: [
+                                          boxShadow: const [
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x33000000),
@@ -209,10 +207,10 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 30.0, 0.0, 20.0),
                                                 child: AutoSizeText(
@@ -234,10 +232,10 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                               ),
                                             ),
                                             Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 10.0),
                                                 child: Text(
@@ -271,17 +269,17 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 50.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          await Clipboard.setData(ClipboardData(
+                                          await Clipboard.setData(const ClipboardData(
                                               text: '8605560461'));
                                         },
                                         text: 'Copy Account Number',
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.content_copy,
                                           size: 15.0,
                                         ),
@@ -289,10 +287,10 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                           width: 300.0,
                                           height: 44.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
@@ -312,7 +310,7 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                                             .titleSmallFamily),
                                               ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -323,7 +321,7 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 20.0, 10.0, 10.0),
                                     child: FlutterFlowPdfViewer(
                                       networkPath: _model
@@ -335,14 +333,13 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                   ),
                                   Stack(
                                     children: [
-                                      if (_model.uploadedFileUrl2 == null ||
-                                          _model.uploadedFileUrl2 == '')
+                                      if (_model.uploadedFileUrl2 == '')
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 20.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -405,18 +402,18 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                                 }
                                               },
                                               text: 'Upload Payment Slip',
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons.upload,
                                                 size: 15.0,
                                               ),
                                               options: FFButtonOptions(
                                                 width: 300.0,
                                                 height: 44.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -439,7 +436,7 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                                                       .titleSmallFamily),
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -449,14 +446,13 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                             ),
                                           ),
                                         ),
-                                      if (_model.uploadedFileUrl2 != null &&
-                                          _model.uploadedFileUrl2 != '')
+                                      if (_model.uploadedFileUrl2 != '')
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: widget.studentFees!
@@ -537,18 +533,18 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                                       ));
                                                     },
                                               text: 'Save Slip',
-                                              icon: Icon(
+                                              icon: const Icon(
                                                 Icons.save,
                                                 size: 15.0,
                                               ),
                                               options: FFButtonOptions(
                                                 width: 300.0,
                                                 height: 44.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -571,14 +567,14 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                                                       .titleSmallFamily),
                                                         ),
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(12.0),
                                                 disabledColor:
-                                                    Color(0xFF00840E),
+                                                    const Color(0xFF00840E),
                                                 disabledTextColor:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
@@ -594,9 +590,9 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.99, -1.0),
+                          alignment: const AlignmentDirectional(0.99, -1.0),
                           child: Padding(
-                            padding: EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: FlutterFlowIconButton(
                               borderColor: Colors.transparent,
                               borderRadius: 25.0,

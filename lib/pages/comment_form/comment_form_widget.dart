@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
@@ -7,9 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,7 +15,7 @@ import 'comment_form_model.dart';
 export 'comment_form_model.dart';
 
 class CommentFormWidget extends StatefulWidget {
-  const CommentFormWidget({Key? key}) : super(key: key);
+  const CommentFormWidget({super.key});
 
   @override
   _CommentFormWidgetState createState() => _CommentFormWidgetState();
@@ -45,8 +42,8 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0.0, 110.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(0.0, 110.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -120,28 +117,28 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
               context.pop();
             },
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Welcome to The Little Shepherds Educare',
                       style: FlutterFlowTheme.of(context).labelLarge,
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 4.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 4.0, 0.0, 0.0),
                     child: Text(
                       'Leave your comment',
                       style:
@@ -156,15 +153,15 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
-                      children: <Widget>[].divide(SizedBox(width: 12.0)),
+                      children: <Widget>[].divide(const SizedBox(width: 12.0)),
                     ),
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -209,7 +206,7 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                             filled: true,
                             fillColor:
                                 FlutterFlowTheme.of(context).primaryBtnText,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 12.0),
                           ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
@@ -258,7 +255,7 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                             filled: true,
                             fillColor:
                                 FlutterFlowTheme.of(context).primaryBtnText,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 12.0),
                           ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
@@ -307,7 +304,7 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                             filled: true,
                             fillColor:
                                 FlutterFlowTheme.of(context).primaryBtnText,
-                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 24.0, 16.0, 12.0),
                           ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
@@ -317,12 +314,12 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                           validator: _model.textController3Validator
                               .asValidator(context),
                         ),
-                      ].divide(SizedBox(height: 12.0)),
+                      ].divide(const SizedBox(height: 12.0)),
                     ),
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                     child: InkWell(
                       splashColor: Colors.transparent,
                       focusColor: Colors.transparent,
@@ -382,7 +379,7 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                       },
                       child: Container(
                         width: double.infinity,
-                        constraints: BoxConstraints(
+                        constraints: const BoxConstraints(
                           maxWidth: 500.0,
                         ),
                         decoration: BoxDecoration(
@@ -394,7 +391,7 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -404,7 +401,7 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                                 size: 32.0,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Upload Image',
@@ -422,7 +419,7 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 12.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 12.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await ParentCommentRecord.collection
@@ -435,16 +432,16 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                             ));
                       },
                       text: 'Submit Comment',
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.receipt_long,
                         size: 15.0,
                       ),
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 50.0,
-                        padding: EdgeInsets.all(0.0),
+                        padding: const EdgeInsets.all(0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryText,
                         textStyle: FlutterFlowTheme.of(context)
                             .titleSmall
@@ -457,7 +454,7 @@ class _CommentFormWidgetState extends State<CommentFormWidget>
                                       .titleSmallFamily),
                             ),
                         elevation: 4.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

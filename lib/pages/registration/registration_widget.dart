@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +16,7 @@ import 'registration_model.dart';
 export 'registration_model.dart';
 
 class RegistrationWidget extends StatefulWidget {
-  const RegistrationWidget({Key? key}) : super(key: key);
+  const RegistrationWidget({super.key});
 
   @override
   _RegistrationWidgetState createState() => _RegistrationWidgetState();
@@ -119,32 +118,32 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
               Expanded(
                 flex: 6,
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                   child: Container(
                     width: 100.0,
                     height: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primary,
                     ),
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: SingleChildScrollView(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   20.0, 20.0, 20.0, 20.0),
                               child: Container(
                                 width: double.infinity,
-                                constraints: BoxConstraints(
+                                constraints: const BoxConstraints(
                                   maxWidth: 570.0,
                                 ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
@@ -158,11 +157,11 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                     width: 1.0,
                                   ),
                                 ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  alignment: const AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 20.0, 20.0, 10.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -191,7 +190,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 24.0),
                                           child: Text(
                                             'Let\'s get started by filling out the form below.',
@@ -200,7 +199,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 .labelLarge
                                                 .override(
                                                   fontFamily: 'Noto Sans',
-                                                  color: Color(0xFF57636C),
+                                                  color: const Color(0xFF57636C),
                                                   fontSize: 16.0,
                                                   fontWeight: FontWeight.w500,
                                                   useGoogleFonts: GoogleFonts
@@ -214,19 +213,17 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Stack(
                                           children: [
-                                            if (_model.uploadedLocalFile1 !=
-                                                    null &&
-                                                (_model.uploadedLocalFile1.bytes
+                                            if ((_model.uploadedLocalFile1.bytes
                                                         ?.isNotEmpty ??
                                                     false))
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Container(
                                                   width: 100.0,
                                                   height: 100.0,
                                                   clipBehavior: Clip.antiAlias,
-                                                  decoration: BoxDecoration(
+                                                  decoration: const BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
                                                   child: Image.memory(
@@ -237,16 +234,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            if (_model.uploadedLocalFile1 ==
-                                                    null ||
-                                                (_model.uploadedLocalFile1.bytes
+                                            if ((_model.uploadedLocalFile1.bytes
                                                         ?.isEmpty ??
                                                     true))
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 10.0, 0.0, 0.0),
                                                   child: InkWell(
@@ -336,9 +331,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
@@ -355,7 +350,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -365,7 +360,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -374,7 +369,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -384,7 +379,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -393,7 +388,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -408,9 +403,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller: _model
@@ -418,7 +413,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode: _model
                                                   .studentNameMandarinFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -430,7 +425,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -440,7 +435,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -449,7 +444,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -459,7 +454,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -468,7 +463,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -484,15 +479,15 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller: _model.ageController,
                                               focusNode: _model.ageFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -504,7 +499,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -514,7 +509,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -523,7 +518,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -533,7 +528,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -542,7 +537,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -558,10 +553,10 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.0, 0.0),
+                                              const AlignmentDirectional(0.0, 0.0),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 16.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
@@ -570,7 +565,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                final _datePickedDate =
+                                                final datePickedDate =
                                                     await showDatePicker(
                                                   context: context,
                                                   initialDate:
@@ -579,13 +574,13 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                   lastDate: getCurrentTimestamp,
                                                 );
 
-                                                if (_datePickedDate != null) {
+                                                if (datePickedDate != null) {
                                                   safeSetState(() {
                                                     _model.datePicked =
                                                         DateTime(
-                                                      _datePickedDate.year,
-                                                      _datePickedDate.month,
-                                                      _datePickedDate.day,
+                                                      datePickedDate.year,
+                                                      datePickedDate.month,
+                                                      datePickedDate.day,
                                                     );
                                                   });
                                                 }
@@ -594,14 +589,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 width: double.infinity,
                                                 height: 50.0,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFFF1F4F8),
+                                                  color: const Color(0xFFF1F4F8),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           12.0),
                                                 ),
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: Stack(
                                                     children: [
@@ -609,11 +604,11 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           null)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -634,7 +629,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           null)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             dateTimeFormat(
@@ -655,18 +650,18 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: Container(
                                             width: double.infinity,
                                             height: 50.0,
                                             decoration: BoxDecoration(
-                                              color: Color(0xFFF1F4F8),
+                                              color: const Color(0xFFF1F4F8),
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child:
                                                   FlutterFlowDropDown<String>(
@@ -674,7 +669,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .genderValueController ??=
                                                     FormFieldController<String>(
                                                         null),
-                                                options: ['Male', 'Female'],
+                                                options: const ['Male', 'Female'],
                                                 onChanged: (val) => setState(
                                                     () => _model.genderValue =
                                                         val),
@@ -692,14 +687,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                       .accent2,
                                                   size: 24.0,
                                                 ),
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                                 elevation: 2.0,
                                                 borderColor:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
                                                 borderWidth: 2.0,
                                                 borderRadius: 12.0,
-                                                margin: EdgeInsetsDirectional
+                                                margin: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 4.0, 16.0, 4.0),
                                                 hidesUnderline: true,
@@ -711,7 +706,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: Container(
                                             width: double.infinity,
@@ -722,7 +717,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                       .secondaryBackground,
                                             ),
                                             child: Align(
-                                              alignment: AlignmentDirectional(
+                                              alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child:
                                                   FlutterFlowDropDown<String>(
@@ -730,7 +725,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .raceValueController ??=
                                                     FormFieldController<String>(
                                                         null),
-                                                options: [
+                                                options: const [
                                                   'Chinese 华人',
                                                   'Malay 马来人',
                                                   'Indian 印度人',
@@ -753,14 +748,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                       .accent2,
                                                   size: 24.0,
                                                 ),
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                                 elevation: 2.0,
                                                 borderColor:
                                                     FlutterFlowTheme.of(context)
                                                         .alternate,
                                                 borderWidth: 2.0,
                                                 borderRadius: 12.0,
-                                                margin: EdgeInsetsDirectional
+                                                margin: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 4.0, 16.0, 4.0),
                                                 hidesUnderline: true,
@@ -772,9 +767,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
@@ -790,7 +785,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -800,7 +795,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -809,7 +804,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -819,7 +814,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -828,7 +823,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -841,9 +836,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
@@ -851,7 +846,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode:
                                                   _model.mumNameFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -862,7 +857,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -872,7 +867,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -881,7 +876,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -891,7 +886,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -900,7 +895,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -915,9 +910,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
@@ -925,7 +920,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode:
                                                   _model.mumContactFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -937,7 +932,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -947,7 +942,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -956,7 +951,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -966,7 +961,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -975,7 +970,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -990,9 +985,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller: _model
@@ -1000,7 +995,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode:
                                                   _model.mumOccupationFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1012,7 +1007,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1022,7 +1017,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1031,7 +1026,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1041,7 +1036,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1050,7 +1045,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1065,9 +1060,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
@@ -1075,7 +1070,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode:
                                                   _model.dadNameFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1086,7 +1081,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1096,7 +1091,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1105,7 +1100,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1115,7 +1110,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1124,7 +1119,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1139,9 +1134,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
@@ -1149,7 +1144,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode:
                                                   _model.dadcontactFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1161,7 +1156,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1171,7 +1166,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1180,7 +1175,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1190,7 +1185,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1199,7 +1194,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1214,9 +1209,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller: _model
@@ -1224,7 +1219,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode:
                                                   _model.dadOccupationFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1236,7 +1231,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1246,7 +1241,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1255,7 +1250,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1265,7 +1260,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1274,7 +1269,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1289,9 +1284,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
@@ -1299,7 +1294,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode:
                                                   _model.schoolNameFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1311,7 +1306,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1321,7 +1316,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1330,7 +1325,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1340,7 +1335,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1349,7 +1344,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1364,7 +1359,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: Container(
                                             width: double.infinity,
@@ -1439,7 +1434,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .accent2,
                                                     size: 24.0,
                                                   ),
-                                                  fillColor: Color(0xFFF1F4F8),
+                                                  fillColor: const Color(0xFFF1F4F8),
                                                   elevation: 2.0,
                                                   borderColor:
                                                       FlutterFlowTheme.of(
@@ -1447,7 +1442,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           .alternate,
                                                   borderWidth: 2.0,
                                                   borderRadius: 12.0,
-                                                  margin: EdgeInsetsDirectional
+                                                  margin: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 4.0, 16.0, 4.0),
                                                   hidesUnderline: true,
@@ -1460,9 +1455,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
@@ -1470,7 +1465,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode:
                                                   _model.homeAddressFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1481,7 +1476,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1491,7 +1486,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1500,7 +1495,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1510,7 +1505,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1519,7 +1514,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1535,7 +1530,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: Container(
                                             width: double.infinity,
@@ -1552,7 +1547,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                       .foodallergyValueController ??=
                                                   FormFieldController<String>(
                                                       null),
-                                              options: ['Yes 有', 'No 没有'],
+                                              options: const ['Yes 有', 'No 没有'],
                                               onChanged: (val) => setState(() =>
                                                   _model.foodallergyValue =
                                                       val),
@@ -1570,14 +1565,14 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .accent2,
                                                 size: 24.0,
                                               ),
-                                              fillColor: Color(0xFFF1F4F8),
+                                              fillColor: const Color(0xFFF1F4F8),
                                               elevation: 2.0,
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
                                               borderWidth: 2.0,
                                               borderRadius: 8.0,
-                                              margin: EdgeInsetsDirectional
+                                              margin: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 4.0, 16.0, 4.0),
                                               hidesUnderline: true,
@@ -1588,9 +1583,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller: _model
@@ -1598,7 +1593,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode: _model
                                                   .listfoodallergyFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1610,7 +1605,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1620,7 +1615,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1629,7 +1624,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1639,7 +1634,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1648,7 +1643,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1664,16 +1659,16 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
                                                   _model.phobiaController,
                                               focusNode: _model.phobiaFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1684,7 +1679,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1694,7 +1689,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1703,7 +1698,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1713,7 +1708,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1722,7 +1717,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1738,9 +1733,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller:
@@ -1748,7 +1743,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode:
                                                   _model.extracareFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1760,7 +1755,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1770,7 +1765,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1779,7 +1774,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1789,7 +1784,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1798,7 +1793,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1814,9 +1809,9 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
-                                          child: Container(
+                                          child: SizedBox(
                                             width: double.infinity,
                                             child: TextFormField(
                                               controller: _model
@@ -1824,7 +1819,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                               focusNode: _model
                                                   .additionalInfoFocusNode,
                                               autofocus: true,
-                                              autofillHints: [
+                                              autofillHints: const [
                                                 AutofillHints.email
                                               ],
                                               obscureText: false,
@@ -1836,7 +1831,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                         .bodyMedium,
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFF1F4F8),
                                                     width: 2.0,
                                                   ),
@@ -1846,7 +1841,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFF4B39EF),
                                                     width: 2.0,
                                                   ),
@@ -1855,7 +1850,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1865,7 +1860,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                 ),
                                                 focusedErrorBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: BorderSide(
+                                                  borderSide: const BorderSide(
                                                     color: Color(0xFFE0E3E7),
                                                     width: 2.0,
                                                   ),
@@ -1874,7 +1869,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           12.0),
                                                 ),
                                                 filled: true,
-                                                fillColor: Color(0xFFF1F4F8),
+                                                fillColor: const Color(0xFFF1F4F8),
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -1890,7 +1885,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -1961,7 +1956,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                       .password) {
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(
-                                                  SnackBar(
+                                                  const SnackBar(
                                                     content: Text(
                                                       'Passwords don\'t match!',
                                                     ),
@@ -2073,7 +2068,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          AccountCreatedWidget(),
+                                                          const AccountCreatedWidget(),
                                                     ),
                                                   );
                                                 },
@@ -2084,16 +2079,16 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                   'LoginPage', context.mounted);
                                             },
                                             text: 'Save  &  Next',
-                                            icon: Icon(
+                                            icon: const Icon(
                                               Icons.double_arrow_sharp,
                                               size: 15.0,
                                             ),
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 44.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -2115,7 +2110,7 @@ class _RegistrationWidgetState extends State<RegistrationWidget> {
                                                                     .titleSmallFamily),
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
