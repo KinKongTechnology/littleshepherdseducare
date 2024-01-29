@@ -19,7 +19,7 @@ class RegistrationWidget extends StatefulWidget {
   const RegistrationWidget({super.key});
 
   @override
-  _RegistrationWidgetState createState() => _RegistrationWidgetState();
+  State<RegistrationWidget> createState() => _RegistrationWidgetState();
 }
 
 class _RegistrationWidgetState extends State<RegistrationWidget> {

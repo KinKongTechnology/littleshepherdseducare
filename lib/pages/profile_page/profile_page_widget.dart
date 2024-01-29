@@ -18,7 +18,7 @@ class ProfilePageWidget extends StatefulWidget {
   final StudentSchemaRecord? studentprofile;
 
   @override
-  _ProfilePageWidgetState createState() => _ProfilePageWidgetState();
+  State<ProfilePageWidget> createState() => _ProfilePageWidgetState();
 }
 
 class _ProfilePageWidgetState extends State<ProfilePageWidget> {

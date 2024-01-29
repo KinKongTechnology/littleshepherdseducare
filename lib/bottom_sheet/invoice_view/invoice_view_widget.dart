@@ -19,7 +19,7 @@ class InvoiceViewWidget extends StatefulWidget {
   final StudentFeesRecord? invoiceDetail;
 
   @override
-  _InvoiceViewWidgetState createState() => _InvoiceViewWidgetState();
+  State<InvoiceViewWidget> createState() => _InvoiceViewWidgetState();
 }
 
 class _InvoiceViewWidgetState extends State<InvoiceViewWidget> {

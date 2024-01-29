@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
+import 'package:the_little_shepherds_educare/index.dart';
 import 'package:the_little_shepherds_educare/main.dart';
 import 'package:the_little_shepherds_educare/flutter_flow/flutter_flow_util.dart';
 

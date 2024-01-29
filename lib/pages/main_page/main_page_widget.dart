@@ -23,7 +23,7 @@ class MainPageWidget extends StatefulWidget {
   final StudentSchemaRecord? userDetail;
 
   @override
-  _MainPageWidgetState createState() => _MainPageWidgetState();
+  State<MainPageWidget> createState() => _MainPageWidgetState();
 }
 
 class _MainPageWidgetState extends State<MainPageWidget> {

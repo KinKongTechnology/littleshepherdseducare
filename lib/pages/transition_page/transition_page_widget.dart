@@ -12,7 +12,7 @@ class TransitionPageWidget extends StatefulWidget {
   const TransitionPageWidget({super.key});
 
   @override
-  _TransitionPageWidgetState createState() => _TransitionPageWidgetState();
+  State<TransitionPageWidget> createState() => _TransitionPageWidgetState();
 }
 
 class _TransitionPageWidgetState extends State<TransitionPageWidget> {

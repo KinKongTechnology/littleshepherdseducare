@@ -21,7 +21,7 @@ class ViewFeesWidget extends StatefulWidget {
   final StudentFeesRecord? studentFees;
 
   @override
-  _ViewFeesWidgetState createState() => _ViewFeesWidgetState();
+  State<ViewFeesWidget> createState() => _ViewFeesWidgetState();
 }
 
 class _ViewFeesWidgetState extends State<ViewFeesWidget> {

@@ -193,8 +193,8 @@ class StudentFeesRecord extends FirestoreRecord {
           ? parent.collection('studentFees')
           : FirebaseFirestore.instance.collectionGroup('studentFees');
 
-  static DocumentReference createDoc(DocumentReference parent) =>
-      parent.collection('studentFees').doc();
+  static DocumentReference createDoc(DocumentReference parent, {String? id}) =>
+      parent.collection('studentFees').doc(id);
 
   static Stream<StudentFeesRecord> getDocument(DocumentReference ref) =>
       ref.snapshots().map((s) => StudentFeesRecord.fromSnapshot(s));

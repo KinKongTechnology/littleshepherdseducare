@@ -21,7 +21,7 @@ class AttendanceViewWidget extends StatefulWidget {
   final StudentSchemaRecord? studentDetail;
 
   @override
-  _AttendanceViewWidgetState createState() => _AttendanceViewWidgetState();
+  State<AttendanceViewWidget> createState() => _AttendanceViewWidgetState();
 }
 
 class _AttendanceViewWidgetState extends State<AttendanceViewWidget> {

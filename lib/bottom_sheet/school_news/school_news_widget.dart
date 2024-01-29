@@ -17,7 +17,7 @@ class SchoolNewsWidget extends StatefulWidget {
   final SchoolNewsRecord? schoolNews;
 
   @override
-  _SchoolNewsWidgetState createState() => _SchoolNewsWidgetState();
+  State<SchoolNewsWidget> createState() => _SchoolNewsWidgetState();
 }
 
 class _SchoolNewsWidgetState extends State<SchoolNewsWidget> {

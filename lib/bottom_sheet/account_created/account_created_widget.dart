@@ -18,7 +18,7 @@ class AccountCreatedWidget extends StatefulWidget {
   final SchoolNewsRecord? schoolNews;
 
   @override
-  _AccountCreatedWidgetState createState() => _AccountCreatedWidgetState();
+  State<AccountCreatedWidget> createState() => _AccountCreatedWidgetState();
 }
 
 class _AccountCreatedWidgetState extends State<AccountCreatedWidget> {

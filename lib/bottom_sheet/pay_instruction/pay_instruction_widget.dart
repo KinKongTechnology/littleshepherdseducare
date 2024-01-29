@@ -23,7 +23,7 @@ class PayInstructionWidget extends StatefulWidget {
   final StudentFeesRecord? studentFees;
 
   @override
-  _PayInstructionWidgetState createState() => _PayInstructionWidgetState();
+  State<PayInstructionWidget> createState() => _PayInstructionWidgetState();
 }
 
 class _PayInstructionWidgetState extends State<PayInstructionWidget> {
@@ -325,7 +325,7 @@ class _PayInstructionWidgetState extends State<PayInstructionWidget> {
                                         10.0, 20.0, 10.0, 10.0),
                                     child: FlutterFlowPdfViewer(
                                       networkPath: _model
-                                          .uploadedLocalFile1.width
+                                          .uploadedLocalFile1.width!
                                           .toString(),
                                       height: 112.0,
                                       horizontalScroll: false,
